@@ -22,7 +22,11 @@ while True:
                 jsonResponse = json.loads(responseWeather.decode('utf-8'))
                 #print(jsonResponse)
                 temperature = float(jsonResponse['main']['temp'])
-                todayforecast = jsonResponse['weather'][0]['main']
+                weatherNow  = jsonResponse['list'][0]
+                weatherinNextThreeHours  = jsonResponse['list'][1]
+                weatherinNextSixHours  = jsonResponse['list'][2]
+                weatherinNextNineHours  = jsonResponse['list'][3]
+                todayforecast = weatherNow['weather'][0]['main']
                 if todayforecast == 'Clear':
                         print ("The weather is clear!")
                         #omxp = Popen(['omxplayer',movie4])
