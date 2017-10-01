@@ -18,7 +18,7 @@ movie4 = ("/home/pi/Downloads/sunny.mp4")
 while True:
         if lightSensor1.wait_for_dark(2):
                 print ("It is dark")
-                responseWeather = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?id=2673730&APPID=bfb8163bad72d71e9da0c72974a73828').read()
+                responseWeather = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/forecast?id=2673722&APPID=bfb8163bad72d71e9da0c72974a73828').read()
                 jsonResponse = json.loads(responseWeather.decode('utf-8'))
                 #print(jsonResponse)
                 temperature = float(jsonResponse['main']['temp'])
